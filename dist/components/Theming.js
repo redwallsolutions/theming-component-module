@@ -45,10 +45,10 @@ Theming.createThemeWithAppearance = function (additionalTheme) {
         }
       }
     },
-    'default': {
+    default: {
       light: {
         color: function color(props) {
-          return props.theme._default || RedwallColorPallete._default;
+          return props.theme.default || RedwallColorPallete._default;
         },
         contrast: function contrast(props) {
           return props.theme.defaultContrast || RedwallColorPallete.defaultContrast;
