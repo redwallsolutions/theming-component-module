@@ -1,6 +1,7 @@
 import RedwallColorPallete from 'color-pallete-component-module';
 import theming from 'styled-theming';
 
+
 class Theming {
   static createThemeWithAppearance = (additionalTheme) => {
     return theming.variants('mode', 'appearance', {
@@ -25,9 +26,9 @@ class Theming {
           contrast: props => props.theme.secondaryContrastDark || RedwallColorPallete.secondaryContrastDark
         }
       },
-      'default': {
+      default: {
         light: {
-          color: props => props.theme._default || RedwallColorPallete._default,
+          color: props => props.theme.default || RedwallColorPallete._default,
           contrast: props => props.theme.defaultContrast || RedwallColorPallete.defaultContrast
         },
         dark: {
