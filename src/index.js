@@ -1,13 +1,13 @@
 import React from 'react';
 import { render } from "react-dom";
-import Theming from './lib';
+import { ThemeProvider } from 'styled-components';
 
-const theme = Theming.createThemeWithAppearance()
-const props = {theme:{mode:'light'}, appearance: 'default'}
+import {ItsWorkingStyled} from './lib/components/Style';
 
-console.log("default light", theme(props).color(props), theme(props).contrast(props))
 const App = () => (
-  <p>Look at the console. :)</p>
+  <ThemeProvider theme={{mode:'light'}}>
+    <ItsWorkingStyled/>
+  </ThemeProvider>
 );
 
 render(<App />, document.getElementById("root"));

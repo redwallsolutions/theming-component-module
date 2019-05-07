@@ -1,7 +1,7 @@
 import _taggedTemplateLiteral from "@babel/runtime/helpers/esm/taggedTemplateLiteral";
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\ntext-align: center;color: #E21306;\n"]);
+  var data = _taggedTemplateLiteral(["\n  ", ";\n"]);
 
   _templateObject = function _templateObject() {
     return data;
@@ -11,4 +11,14 @@ function _templateObject() {
 }
 
 import styled from 'styled-components';
-export var ItsWorkingStyled = styled.h1(_templateObject());
+import Theming from './../../lib';
+var theme = Theming.createThemeWithAppearance();
+export var ItsWorkingStyled = styled.h1(_templateObject(), function (props) {
+  return console.log(theme(props).color(props), theme(props).contrast(props));
+});
+ItsWorkingStyled.defaultProps = {
+  theme: {
+    mode: 'light'
+  },
+  appearance: 'default'
+};
