@@ -2,9 +2,10 @@ import React from 'react';
 import { render } from "react-dom";
 import Theming from './lib';
 
-console.log(Theming.createThemeWithAppearance()({theme: {mode:'light'}, appearance: 'primary'}));
+const theme = Theming.createThemeWithAppearance()
+const props = {theme:{mode:'dark'}, appearance: 'default'}
 
-
+console.log("default light", theme(props).color(props), theme(props).contrast(props))
 const App = () => (
   <p>Look at the console. :)</p>
 );

@@ -2508,8 +2508,8 @@ color-name@^1.0.0:
   integrity sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==
 
 "color-pallete-component-module@https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/color-pallete-component-module":
-  version "1.1.1"
-  resolved "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/color-pallete-component-module#07f6ac8b94888abab019081141189ba04e737574"
+  version "1.1.2"
+  resolved "https://4c4f37bb6657744cab12a1d1c42e40ef1252aa1c:x-oauth-basic@github.com/redwallsolutions/color-pallete-component-module#3361e35abaa5b7fcbcb7acdcd10f2b7ca1ed4098"
   dependencies:
     styled-components "^4.1.3"
 
