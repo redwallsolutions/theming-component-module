@@ -3,13 +3,17 @@ import Theming from './../../lib'
 
 const theme = Theming.createThemeWithAppearance();
 
-export const ItsWorkingStyled = styled.h1`
-  ${props => console.log(theme(props).color(props), theme(props).contrast(props))};
+const ItsWorkingStyled = styled.h1`
+  padding: 5em;
+  background-color: ${props => theme(props).contrast(props)};
+  color: ${props => theme(props).color(props)};
 `
 
 ItsWorkingStyled.defaultProps = {
   theme: {
     mode: 'light'
   },
-  appearance: 'default'
+  appearance: 'secondary'
 }
+
+export {ItsWorkingStyled}

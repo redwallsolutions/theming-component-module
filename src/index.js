@@ -5,8 +5,10 @@ import { ThemeProvider } from 'styled-components';
 import {ItsWorkingStyled} from './lib/components/Style';
 
 const App = () => (
-  <ThemeProvider theme={{mode:'light'}}>
-    <ItsWorkingStyled/>
+  <ThemeProvider theme={{mode:'dark'}}>
+    <ItsWorkingStyled>
+      Oi
+    </ItsWorkingStyled>
   </ThemeProvider>
 );
 
