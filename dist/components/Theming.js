@@ -45,21 +45,21 @@ Theming.createThemeWithAppearance = function (additionalTheme) {
         }
       }
     },
-    neutral: {
+    'default': {
       light: {
         color: function color(props) {
-          return props.theme.neutral || RedwallColorPallete.neutral;
+          return props.theme._default || RedwallColorPallete._default;
         },
         contrast: function contrast(props) {
-          return props.theme.neutralContrast || RedwallColorPallete.neutralContrast;
+          return props.theme.defaultContrast || RedwallColorPallete.defaultContrast;
         }
       },
       dark: {
         color: function color(props) {
-          return props.theme.neutralDark || RedwallColorPallete.neutralDark;
+          return props.theme.defaultDark || RedwallColorPallete.defaultDark;
         },
         contrast: function contrast(props) {
-          return props.theme.neutralContrastDark || RedwallColorPallete.neutralContrastDark;
+          return props.theme.defaultContrastDark || RedwallColorPallete.defaultContrastDark;
         }
       }
     }

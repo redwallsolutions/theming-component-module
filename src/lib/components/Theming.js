@@ -25,14 +25,14 @@ class Theming {
           contrast: props => props.theme.secondaryContrastDark || RedwallColorPallete.secondaryContrastDark
         }
       },
-      neutral: {
+      'default': {
         light: {
-          color: props => props.theme.neutral || RedwallColorPallete.neutral,
-          contrast: props => props.theme.neutralContrast || RedwallColorPallete.neutralContrast
+          color: props => props.theme._default || RedwallColorPallete._default,
+          contrast: props => props.theme.defaultContrast || RedwallColorPallete.defaultContrast
         },
         dark: {
-          color: props => props.theme.neutralDark || RedwallColorPallete.neutralDark,
-          contrast: props => props.theme.neutralContrastDark || RedwallColorPallete.neutralContrastDark
+          color: props => props.theme.defaultDark || RedwallColorPallete.defaultDark,
+          contrast: props => props.theme.defaultContrastDark || RedwallColorPallete.defaultContrastDark
         }
       }
     })
