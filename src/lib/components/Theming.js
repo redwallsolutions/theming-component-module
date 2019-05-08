@@ -21,7 +21,7 @@ class Theming {
           contrast: props => props.theme.secondaryContrast || RedwallColorPallete.secondaryContrast
         },
         dark: {
-          color: props => props.theme.primaryDark || RedwallColorPallete.primaryDark,
+          color: props => props.theme.secondaryDark || RedwallColorPallete.secondaryDark,
           contrast: props => props.theme.secondaryContrastDark || RedwallColorPallete.secondaryContrastDark
         }
       },

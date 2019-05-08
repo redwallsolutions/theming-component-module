@@ -38,7 +38,7 @@ Theming.createThemeWithAppearance = function (additionalTheme) {
       },
       dark: {
         color: function color(props) {
-          return props.theme.primaryDark || RedwallColorPallete.primaryDark;
+          return props.theme.secondaryDark || RedwallColorPallete.secondaryDark;
         },
         contrast: function contrast(props) {
           return props.theme.secondaryContrastDark || RedwallColorPallete.secondaryContrastDark;
