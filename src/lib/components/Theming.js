@@ -1,4 +1,4 @@
-import RedwallColorPallete from 'color-pallete-component-module';
+import RedwallColorPallete from '@redwallsolutions/color-pallete-component-module';
 import theming from 'styled-theming';
 
 class Theming {
