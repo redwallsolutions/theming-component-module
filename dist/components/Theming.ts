@@ -2,7 +2,7 @@ import RedwallColorPallete from '@redwallsolutions/color-pallete-component-modul
 import theming from 'styled-theming';
 
 class Theming {
-  static createThemeWithAppearance = (additionalTheme:any) => {
+  static createThemeWithAppearance = (additionalTheme:any):any => {
     return theming.variants('mode', 'appearance', {
       ...additionalTheme,
       primary: {
