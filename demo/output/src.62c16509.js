@@ -33980,7 +33980,7 @@ var makeStyleTag = function makeStyleTag(target, tagEl, insertBefore) {
   if (target) targetDocument = target.ownerDocument;else if (tagEl) targetDocument = tagEl.ownerDocument;
   var el = targetDocument.createElement('style');
   el.setAttribute(SC_ATTR, '');
-  el.setAttribute(SC_VERSION_ATTR, "4.4.0");
+  el.setAttribute(SC_VERSION_ATTR, "4.4.1");
   var nonce = getNonce();
 
   if (nonce) {
@@ -34012,7 +34012,7 @@ var makeStyleTag = function makeStyleTag(target, tagEl, insertBefore) {
 var wrapAsHtmlTag = function wrapAsHtmlTag(css, names) {
   return function (additionalAttrs) {
     var nonce = getNonce();
-    var attrs = [nonce && 'nonce="' + nonce + '"', SC_ATTR + '="' + stringifyNames(names) + '"', SC_VERSION_ATTR + '="' + "4.4.0" + '"', additionalAttrs];
+    var attrs = [nonce && 'nonce="' + nonce + '"', SC_ATTR + '="' + stringifyNames(names) + '"', SC_VERSION_ATTR + '="' + "4.4.1" + '"', additionalAttrs];
     var htmlAttr = attrs.filter(Boolean).join(' ');
     return '<style ' + htmlAttr + '>' + css() + '</style>';
   };
@@ -34024,7 +34024,7 @@ var wrapAsElement = function wrapAsElement(css, names) {
   return function () {
     var _props;
 
-    var props = (_props = {}, _props[SC_ATTR] = stringifyNames(names), _props[SC_VERSION_ATTR] = "4.4.0", _props);
+    var props = (_props = {}, _props[SC_ATTR] = stringifyNames(names), _props[SC_VERSION_ATTR] = "4.4.1", _props);
     var nonce = getNonce();
 
     if (nonce) {
@@ -34435,7 +34435,7 @@ var StyleSheet = function () {
     var isStreamed = false;
     /* retrieve all of our SSR style elements from the DOM */
 
-    var nodes = document.querySelectorAll('style[' + SC_ATTR + '][' + SC_VERSION_ATTR + '="' + "4.4.0" + '"]');
+    var nodes = document.querySelectorAll('style[' + SC_ATTR + '][' + SC_VERSION_ATTR + '="' + "4.4.1" + '"]');
     var nodesSize = nodes.length;
     /* abort rehydration if no previous style tags were found */
 
@@ -35386,7 +35386,6 @@ exports.StyleSheetManager = StyleSheetManager;
   })
 } : void 0; // 
 
-var THEME_PROP_REGEX = /\.theme[.[]/;
 var identifiers = {};
 /* We depend on components having unique IDs */
 
@@ -35458,21 +35457,13 @@ var StyledComponent = function (_Component) {
         displayName = _props$forwardedCompo.displayName,
         foldedComponentIds = _props$forwardedCompo.foldedComponentIds,
         styledComponentId = _props$forwardedCompo.styledComponentId,
-        target = _props$forwardedCompo.target,
-        usesTheme = _props$forwardedCompo.usesTheme;
+        target = _props$forwardedCompo.target;
     var generatedClassName = void 0;
-    var rawTheme = void 0;
 
     if (componentStyle.isStatic) {
       generatedClassName = this.generateAndInjectStyles(EMPTY_OBJECT, this.props);
     } else {
-      rawTheme = determineTheme(this.props, theme, defaultProps);
-      generatedClassName = this.generateAndInjectStyles(rawTheme || EMPTY_OBJECT, this.props);
-
-      if ("development" !== 'production' && usesTheme && !rawTheme) {
-        console.error('Component \'' + // $FlowFixMe
-        displayName + '\' (.' + styledComponentId + ') references the \'theme\' prop in its styles but no theme was provided via prop or <ThemeProvider>.');
-      }
+      generatedClassName = this.generateAndInjectStyles(determineTheme(this.props, theme, defaultProps) || EMPTY_OBJECT, this.props);
     }
 
     var elementToBeCreated = this.props.as || this.attrs.as || target;
@@ -35648,10 +35639,6 @@ function createStyledComponent(target, options, rules) {
 
   if ("development" !== 'production') {
     // $FlowFixMe
-    WrappedStyledComponent.usesTheme = componentStyle.rules.some(function (x) {
-      return isFunction(x) && THEME_PROP_REGEX.test(x.toString());
-    }); // $FlowFixMe
-
     WrappedStyledComponent.warnTooManyClasses = createWarnTooManyClasses(displayName);
   } // $FlowFixMe
 
@@ -35973,7 +35960,7 @@ theme.variants = function(name, prop, values) {
 
 module.exports = theme;
 
-},{}],"../src/lib/components/Theming.js":[function(require,module,exports) {
+},{}],"../src/lib/components/Theming.ts":[function(require,module,exports) {
 "use strict";
 
 var __assign = this && this.__assign || function () {
@@ -36064,7 +36051,7 @@ exports.createThemeWithAppearance = function (additionalTheme) {
     }
   }));
 };
-},{"@redwallsolutions/color-pallete-component-module":"../node_modules/@redwallsolutions/color-pallete-component-module/dist/index.js","styled-theming":"../node_modules/styled-theming/index.js"}],"../src/lib/index.js":[function(require,module,exports) {
+},{"@redwallsolutions/color-pallete-component-module":"../node_modules/@redwallsolutions/color-pallete-component-module/dist/index.js","styled-theming":"../node_modules/styled-theming/index.js"}],"../src/lib/index.ts":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -36074,7 +36061,7 @@ Object.defineProperty(exports, "__esModule", {
 var Theming_1 = require("./components/Theming");
 
 exports.createThemeWithAppearance = Theming_1.createThemeWithAppearance;
-},{"./components/Theming":"../src/lib/components/Theming.js"}],"../src/index.tsx":[function(require,module,exports) {
+},{"./components/Theming":"../src/lib/components/Theming.ts"}],"../src/index.tsx":[function(require,module,exports) {
 "use strict";
 
 var __makeTemplateObject = this && this.__makeTemplateObject || function (cooked, raw) {
@@ -36138,7 +36125,7 @@ var AppContent = function AppContent(props) {
 
 react_dom_1.render(react_1.default.createElement(App, null), document.getElementById('root'));
 var templateObject_1;
-},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./lib":"../src/lib/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../node_modules/react/index.js","react-dom":"../node_modules/react-dom/index.js","styled-components":"../node_modules/styled-components/dist/styled-components.browser.esm.js","./lib":"../src/lib/index.ts"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -36166,7 +36153,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "36689" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33313" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

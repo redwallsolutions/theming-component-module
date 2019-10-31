@@ -976,7 +976,6 @@
 "@redwallsolutions/color-pallete-component-module@^2.0.2":
   version "2.0.2"
   resolved "https://npm.pkg.github.com/download/@redwallsolutions/color-pallete-component-module/2.0.2/c63e656f780d36da484a1249ea1d8e46be2696e8753a1c1bef376871e820c939#"
-  integrity sha512-Bshuv9xjql7BQ/Joqu1+VQJLWHziM7DJrW27RLygVX6A2rHmQYT+Pojq56Ef3Wv+rFYInU0Fuhu1HPYI7kzFCw==
 
 "@types/prop-types@*":
   version "15.7.3"

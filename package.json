@@ -1,6 +1,6 @@
 {
   "name": "@redwallsolutions/theming-component-module",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
   "files": [
@@ -22,7 +22,8 @@
     "react-dom": "^16.10.2",
     "rimraf": "^2.6.3",
     "styled-components": "^4.4.0",
-    "typescript": "^3.6.4"
+    "typescript": "^3.6.4",
+    "@types/react-dom": "^16.9.3"
   },
   "browserslist": [
     ">0.2%",
@@ -35,7 +36,6 @@
   },
   "dependencies": {
     "@redwallsolutions/color-pallete-component-module": "^2.0.2",
-    "@types/react-dom": "^16.9.3",
     "styled-theming": "^2.2.0"
   }
 }
