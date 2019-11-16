@@ -13,30 +13,31 @@
   "repository": "git@github.com:redwallsolutions/theming-component-module",
   "scripts": {
     "start": "rimraf demo/output && parcel demo/index.html -d demo/output --open",
-    "build": "rimraf dist && tsc",
+    "build": "yarn test && rimraf dist && tsc",
     "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-react": "^7.6.3",
+    "@types/jest": "^24.0.23",
     "@types/react-dom": "^16.9.3",
     "@types/styled-theming": "^2.2.2",
     "babel-preset-react-app": "^9.0.2",
+    "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
     "rimraf": "^2.6.3",
     "styled-components": "^4.4.0",
-    "typescript": "^3.6.4",
-    "jest": "^24.9.0",
-    "@types/jest": "^24.0.23",
-    "ts-jest": "^24.1.0"
+    "ts-jest": "^24.1.0",
+    "typescript": "^3.6.4"
   },
   "publishConfig": {
-    "registry": "https://registry.npm.org",
-    "access":"public"
+    "registry": "https://registry.npmjs.org",
+    "access": "public"
   },
   "dependencies": {
+    "@redwallsolutions/color-pallete-component-module": "^2.0.6",
     "styled-theming": "^2.2.0"
   }
 }
