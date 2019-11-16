@@ -3,18 +3,23 @@
   "version": "2.0.1",
   "main": "dist/index.js",
   "module": "dist/index.js",
+  "type": "dist/index.d.ts",
+  "author": "Andrew Ribeiro",
+  "license": "MIT",
+  "description": "Theming Component is lib that implements theming logic to apply to react components built using styled-components.",
   "files": [
     "dist"
   ],
-  "repository": "https://github.com/redwallsolutions/theming-component-module",
+  "repository": "git@github.com:redwallsolutions/theming-component-module",
   "scripts": {
     "start": "rimraf demo/output && parcel demo/index.html -d demo/output --open",
     "build": "rimraf dist && tsc",
-    "release": "yarn build && npm publish"
+    "test": "jest"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "@babel/preset-react": "^7.6.3",
+    "@types/react-dom": "^16.9.3",
     "@types/styled-theming": "^2.2.2",
     "babel-preset-react-app": "^9.0.2",
     "parcel-bundler": "^1.12.4",
@@ -23,19 +28,15 @@
     "rimraf": "^2.6.3",
     "styled-components": "^4.4.0",
     "typescript": "^3.6.4",
-    "@types/react-dom": "^16.9.3"
+    "jest": "^24.9.0",
+    "@types/jest": "^24.0.23",
+    "ts-jest": "^24.1.0"
   },
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
   "publishConfig": {
-    "registry": "https://npm.pkg.githbub.com"
+    "registry": "https://registry.npm.org",
+    "access":"public"
   },
   "dependencies": {
-    "@redwallsolutions/color-pallete-component-module": "^2.0.2",
     "styled-theming": "^2.2.0"
   }
 }
